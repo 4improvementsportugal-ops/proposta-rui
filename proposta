@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta de Vídeo Promocional — Monte do Lameirão · 4Improvements</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold:    #B8922A;
+    --gold-lt: #D4A83A;
+    --ink:     #171411;
+    --mid:     #5A5550;
+    --muted:   #908880;
+    --parch:   #F7F4EF;
+    --white:   #FDFCFA;
+    --rule:    #E0D9CF;
+    --night:   #0E1018;
+    --dusk:    #1B2236;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ─────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 52px;
+    background: rgba(14,16,24,0.88);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(184,146,42,0.18);
+  }
+  .nav-left { display: flex; align-items: center; gap: 20px; }
+  .nav-logo-icon {
+    width: 28px; height: 28px;
+    background: var(--gold);
+    clip-path: circle(50%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-brand {
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #FDFCF8; font-weight: 400;
+  }
+  .nav-brand span { color: var(--gold-lt); font-weight: 500; }
+  .nav-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.12); }
+  .nav-agency { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .nav-meta { text-align: right; }
+  .nav-ref { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); display: block; }
+  .nav-date { font-size: 11px; color: rgba(255,255,255,0.2); }
+
+  /* ── HERO ────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 25% 35%, rgba(184,146,42,0.10) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 65%, rgba(60,90,140,0.08) 0%, transparent 50%),
+      linear-gradient(168deg, #0A0D14 0%, #141928 50%, #1C1408 100%);
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 52px 72px;
+    position: relative; overflow: hidden;
+  }
+  .stars {
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 8%  14%, rgba(255,255,255,0.7)  0%, transparent 100%),
+      radial-gradient(1px 1px at 31% 7%,  rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 52% 20%, rgba(255,255,255,0.65) 0%, transparent 100%),
+      radial-gradient(1px 1px at 68% 11%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      radial-gradient(1px 1px at 84% 4%,  rgba(255,255,255,0.6)  0%, transparent 100%),
+      radial-gradient(1px 1px at 19% 33%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 38%, rgba(255,255,255,0.50) 0%, transparent 100%),
+      radial-gradient(1px 1px at 77% 29%, rgba(255,255,255,0.40) 0%, transparent 100%),
+      radial-gradient(2px 2px at 42% 12%, rgba(212,168,58,0.60)  0%, transparent 100%),
+      radial-gradient(1px 1px at 93% 25%, rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(1px 1px at 4%  50%, rgba(255,255,255,0.30) 0%, transparent 100%),
+      radial-gradient(1px 1px at 28% 58%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 88% 48%, rgba(255,255,255,0.35) 0%, transparent 100%);
+    animation: drift 100s linear infinite;
+  }
+  @keyframes drift {
+    from { transform: translate(0,0); }
+    to   { transform: translate(-5px,-10px); }
+  }
+
+  /* Logo SVG-like shape made in CSS */
+  .hero-logo {
+    margin-bottom: 36px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .hero-logo-mark {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,146,42,0.5);
+    background: radial-gradient(circle, rgba(184,146,42,0.12) 0%, transparent 70%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .hero-logo-mark::before {
+    content: '✦';
+    font-size: 20px; color: var(--gold);
+    opacity: 0.8;
+  }
+  .hero-logo-text {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .hero-logo-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #FDFCF8;
+    font-weight: 400;
+  }
+  .hero-logo-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 13px;
+    color: var(--gold); letter-spacing: 0.04em;
+  }
+
+  .hero-tag {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(184,146,42,0.7); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .hero-tag::before {
+    content: ''; display: block;
+    width: 36px; height: 1px; background: var(--gold); opacity: 0.5;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5.5vw, 78px);
+    font-weight: 300; line-height: 1.1;
+    color: #FDFCF8;
+    max-width: 680px;
+    letter-spacing: -0.01em;
+    margin-bottom: 28px;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-lt); }
+
+  .hero-sub {
+    font-size: 13px; color: rgba(253,252,248,0.4);
+    letter-spacing: 0.09em; text-transform: uppercase;
+    max-width: 520px; line-height: 2;
+  }
+  .hero-scroll {
+    position: absolute; bottom: 32px; right: 52px;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hero-scroll::after {
+    content: ''; display: block;
+    width: 48px; height: 1px; background: rgba(255,255,255,0.12);
+  }
+
+  /* ── SECTION BASE ────────────────────────────────── */
+  section { padding: 88px 52px; }
+  section + section { border-top: 1px solid var(--rule); }
+  .section-label {
+    font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 40px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 28px; height: 1px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 3.8vw, 46px);
+    font-weight: 400; line-height: 1.2;
+    color: var(--ink); max-width: 640px; margin-bottom: 20px;
+  }
+  .section-body {
+    font-size: 15px; color: var(--mid); line-height: 1.8;
+    max-width: 640px;
+  }
+
+  /* ── PROMOTOR ────────────────────────────────────── */
+  .promotor { background: var(--night); }
+  .promotor .section-label { color: var(--gold); }
+  .promotor .section-label::before { background: var(--gold); }
+  .promotor .section-title { color: #FDFCF8; }
+  .promotor .section-body { color: rgba(253,252,248,0.45); }
+  .promotor-card {
+    margin-top: 52px;
+    padding: 48px;
+    border: 1px solid rgba(184,146,42,0.2);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .promotor-block-label {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .promotor-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 400; line-height: 1.2;
+    color: #FDFCF8; margin-bottom: 6px;
+  }
+  .promotor-sub { font-size: 13px; color: rgba(253,252,248,0.35); }
+  .socios-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+  .socios-list li {
+    font-size: 13.5px; color: rgba(253,252,248,0.6);
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .socios-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+  /* ── BRIEF ───────────────────────────────────────── */
+  .brief { background: var(--parch); }
+  .brief-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0; margin-top: 52px;
+    border: 1px solid var(--rule);
+  }
+  .brief-cell {
+    padding: 30px 32px;
+    border-right: 1px solid var(--rule);
+  }
+  .brief-cell:last-child { border-right: none; }
+  .brief-cell-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 10px;
+  }
+  .brief-cell-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; color: var(--ink); line-height: 1.3;
+  }
+  .brief-cell-note { font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+
+  /* Distances table */
+  .dist-table {
+    margin-top: 52px;
+    border: 1px solid var(--rule);
+    border-collapse: collapse; width: 100%;
+  }
+  .dist-table th {
+    background: var(--white);
+    padding: 12px 24px; text-align: left;
+    font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); font-weight: 400;
+    border-bottom: 1px solid var(--rule);
+  }
+  .dist-table td {
+    padding: 14px 24px;
+    font-size: 13.5px; color: var(--mid);
+    border-bottom: 1px solid var(--rule);
+  }
+  .dist-table tr:last-child td { border-bottom: none; }
+  .dist-table .dest { color: var(--ink); font-weight: 400; }
+  .dist-table .highlight { color: var(--gold); font-weight: 500; }
+  .dist-table tr:nth-child(2n) td { background: rgba(183,165,140,0.04); }
+
+  /* ── CONCEITO ────────────────────────────────────── */
+  .concept-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(20px, 2.8vw, 36px);
+    font-style: italic; font-weight: 300;
+    line-height: 1.5; color: var(--ink);
+    max-width: 740px;
+    border-left: 2px solid var(--gold);
+    padding-left: 32px;
+    margin: 48px 0;
+  }
+  .acts {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px; margin-top: 52px;
+  }
+  .act {
+    padding: 32px;
+    background: var(--parch);
+    border-top: 2px solid var(--gold);
+  }
+  .act-num {
+    font-size: 11px; letter-spacing: 0.2em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .act-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500;
+    margin-bottom: 12px; color: var(--ink);
+  }
+  .act-body { font-size: 13.5px; color: var(--mid); line-height: 1.75; }
+  .act-time { font-size: 11px; color: var(--muted); margin-top: 16px; letter-spacing: 0.08em; }
+
+  /* ── SCOPE ───────────────────────────────────────── */
+  .scope-phases {
+    margin-top: 52px; border: 1px solid var(--rule);
+    display: flex; flex-direction: column;
+  }
+  .phase {
+    display: grid; grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  .phase:last-child { border-bottom: none; }
+  .phase-label-col {
+    padding: 36px 40px; background: var(--parch);
+    border-right: 1px solid var(--rule);
+    display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .phase-num { font-size: 10px; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+  .phase-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 500; line-height: 1.3; color: var(--ink);
+  }
+  .phase-content-col { padding: 36px 40px; }
+  .scope-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .scope-items li {
+    font-size: 14px; color: var(--mid);
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .scope-items li::before { content: '—'; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+
+  /* ── NOTA DE VALOR ───────────────────────────────── */
+  .nota-renders {
+    margin-top: 36px;
+    padding: 28px 32px;
+    background: rgba(184,146,42,0.05);
+    border: 1px solid rgba(184,146,42,0.25);
+    border-left: 3px solid var(--gold);
+  }
+  .nota-renders-title {
+    font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .nota-renders-body { font-size: 13.5px; color: var(--mid); line-height: 1.7; }
+
+  /* ── PRICING ─────────────────────────────────────── */
+  .pricing { background: var(--night); color: var(--white); }
+  .pricing .section-label { color: var(--gold-lt); }
+  .pricing .section-label::before { background: var(--gold-lt); }
+  .pricing .section-title { color: #FDFCF8; }
+  .pricing .section-body { color: rgba(253,252,248,0.45); }
+
+  .pkg-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; margin-top: 52px;
+  }
+  .pkg {
+    padding: 48px;
+    border: 1px solid rgba(184,146,42,0.2);
+    position: relative;
+  }
+  .pkg.featured {
+    border-color: var(--gold);
+    background: rgba(184,146,42,0.05);
+  }
+  .pkg-badge {
+    position: absolute; top: -1px; left: 48px;
+    background: var(--gold); color: #0E1018;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 5px 16px; font-weight: 500;
+  }
+  .pkg-name {
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  .pkg-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 300; line-height: 1;
+    color: #FDFCF8; margin-bottom: 6px;
+  }
+  .pkg-price span { font-size: 22px; vertical-align: top; margin-top: 10px; display: inline-block; }
+  .pkg-price sub { font-size: 14px; color: rgba(253,252,248,0.4); font-family: 'DM Sans'; font-weight: 300; }
+  .pkg-desc { font-size: 13px; color: rgba(253,252,248,0.45); margin-bottom: 36px; line-height: 1.6; }
+  .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .pkg-features li {
+    font-size: 13.5px; color: rgba(253,252,248,0.75);
+    display: flex; align-items: flex-start; gap: 12px; line-height: 1.5;
+  }
+  .pkg-features li .check {
+    width: 16px; height: 16px; flex-shrink: 0;
+    border: 1px solid var(--gold); border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 9px; color: var(--gold); margin-top: 1px;
+  }
+  .pkg-divider {
+    height: 1px; background: rgba(184,146,42,0.15);
+    margin: 20px 0;
+  }
+  .pkg-features li.dim { color: rgba(253,252,248,0.4); font-size: 13px; }
+
+  /* ITEMIZED */
+  .items-grid { margin-top: 60px; border-top: 1px solid rgba(184,146,42,0.15); }
+  .item-group-header {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); padding: 28px 0 6px;
+  }
+  .item-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding: 16px 0; border-bottom: 1px solid rgba(184,146,42,0.08); gap: 32px;
+  }
+  .item-name { font-size: 13.5px; color: rgba(253,252,248,0.65); flex: 1; }
+  .item-note { font-size: 11.5px; color: rgba(253,252,248,0.28); margin-top: 3px; }
+  .item-price {
+    font-size: 14px; color: rgba(253,252,248,0.85);
+    white-space: nowrap; min-width: 80px; text-align: right;
+  }
+  .total-row {
+    display: flex; justify-content: space-between;
+    padding: 28px 0 0;
+    border-top: 1px solid rgba(184,146,42,0.3);
+    margin-top: 8px;
+  }
+  .total-label {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(253,252,248,0.4);
+  }
+  .total-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300; color: var(--gold-lt); line-height: 1;
+  }
+  .total-note { font-size: 11px; color: rgba(253,252,248,0.28); margin-top: 10px; text-align: right; }
+
+  /* ── TIMELINE ────────────────────────────────────── */
+  .timeline { display: flex; flex-direction: column; gap: 0; margin-top: 52px; }
+  .tl-item {
+    display: grid; grid-template-columns: 160px 1fr;
+    padding: 24px 0; border-bottom: 1px solid var(--rule);
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-week {
+    font-size: 11px; letter-spacing: 0.16em; color: var(--gold);
+    text-transform: uppercase; padding-right: 32px; padding-top: 2px;
+  }
+  .tl-phase { font-size: 14px; color: var(--ink); font-weight: 400; margin-bottom: 4px; }
+  .tl-detail { font-size: 12.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ── TERMS ───────────────────────────────────────── */
+  .terms { background: var(--parch); }
+  .terms-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 28px; margin-top: 52px;
+  }
+  .term-card {
+    padding: 32px 36px;
+    background: var(--white); border: 1px solid var(--rule);
+  }
+  .term-title {
+    font-size: 10.5px; letter-spacing: 0.2em; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  .term-body { font-size: 13.5px; color: var(--mid); line-height: 1.75; }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    padding: 64px 52px;
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: end; gap: 32px;
+  }
+  .footer-claim {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 300; font-style: italic;
+    color: rgba(253,252,248,0.55); max-width: 480px; line-height: 1.45;
+  }
+  .footer-meta { text-align: right; }
+  .footer-agency {
+    font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 10px;
+  }
+  .footer-contact { font-size: 12px; color: rgba(253,252,248,0.28); line-height: 1.8; }
+
+  /* ── ANIMATED SVG LOGO ──────────────────────────── */
+  .hero-logo-animated { margin-bottom: 40px; }
+  .logo-svg { overflow: visible; }
+
+  /* Branch draw-in animation */
+  .branch {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    opacity: 0;
+    animation: drawBranch 0.65s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  /* Outer arcs */
+  .b1  { animation-delay: 0.25s; }
+  .b2  { animation-delay: 0.48s; }
+  .b3  { animation-delay: 0.71s; }
+  .b4  { animation-delay: 0.94s; }
+  .b5  { animation-delay: 1.17s; }
+  .b6  { animation-delay: 1.40s; }
+  /* Inner spokes */
+  .b7  { animation-delay: 0.36s; }
+  .b8  { animation-delay: 0.60s; }
+  .b9  { animation-delay: 0.83s; }
+  .b10 { animation-delay: 1.06s; }
+  .b11 { animation-delay: 1.29s; }
+  .b12 { animation-delay: 1.52s; }
+  /* Twig tips */
+  .b13 { animation-delay: 1.65s; }
+  .b14 { animation-delay: 1.75s; }
+  .b15 { animation-delay: 1.85s; }
+  .b16 { animation-delay: 1.95s; }
+  .b17 { animation-delay: 2.05s; }
+
+  @keyframes drawBranch {
+    from { stroke-dashoffset: 500; opacity: 1; }
+    to   { stroke-dashoffset: 0;   opacity: 1; }
+  }
+
+  /* Center dot appears after branches */
+  .center-dot {
+    opacity: 0;
+    animation: dotPop 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards 1.95s;
+  }
+  @keyframes dotPop {
+    from { opacity: 0; transform: scale(0); transform-origin: 0 0; }
+    to   { opacity: 1; transform: scale(1); transform-origin: 0 0; }
+  }
+
+  /* Outer ring pulse after appearing */
+  .outer-ring {
+    opacity: 0;
+    animation: ringAppear 0.8s ease forwards 2.2s, ringPulse 5s ease-in-out infinite 3s;
+  }
+  @keyframes ringAppear {
+    from { opacity: 0; }
+    to   { opacity: 0.28; }
+  }
+  @keyframes ringPulse {
+    0%, 100% { opacity: 0.18; }
+    50%       { opacity: 0.52; }
+  }
+
+  /* Logo text fade+slide up */
+  .logo-text-main {
+    opacity: 0;
+    animation: textRise 0.7s ease forwards 2.1s;
+  }
+  .logo-text-sub {
+    opacity: 0;
+    animation: textRise 0.7s ease forwards 2.35s;
+  }
+  @keyframes textRise {
+    from { opacity: 0; transform: translateY(7px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE / PRINT ──────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    section { padding: 64px 24px; }
+    .hero { padding: 0 24px 60px; }
+    .brief-grid, .acts, .pkg-grid, .terms-grid, .promotor-card { grid-template-columns: 1fr; }
+    .brief-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+    .phase { grid-template-columns: 1fr; }
+    .phase-label-col { border-right: none; border-bottom: 1px solid var(--rule); }
+    footer { grid-template-columns: 1fr; }
+    .footer-meta { text-align: left; }
+  }
+  @media print {
+    nav { position: static; background: #fff; }
+    .hero { min-height: 60vh; }
+    .stars { display: none; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <div class="nav-logo-mark" style="width:26px;height:26px;"></div>
+    <span class="nav-brand">MONTE DO LAMEIRÃO <span>· Turismo Sustentável</span></span>
+    <div class="nav-sep"></div>
+    <span class="nav-agency">4Improvements</span>
+  </div>
+  <div class="nav-meta">
+    <span class="nav-ref">Proposta REF-2026-MDL-001</span>
+    <span class="nav-date">Junho 2026</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="stars"></div>
+  <div class="hero-logo-animated">
+    <svg class="logo-svg" viewBox="0 0 180 218" width="178" height="218" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goldenGlow" x="-25%" y="-25%" width="150%" height="150%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2.8" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <!-- Outer pulsing ring -->
+      <circle class="outer-ring" cx="90" cy="85" r="74"
+              fill="none" stroke="#C9A040" stroke-width="0.7"/>
+
+      <!-- Botanical mark — positioned at center (90,85) of SVG -->
+      <g transform="translate(90,85)" filter="url(#goldenGlow)">
+
+        <!-- Slow continuous rotation wraps all botanical content -->
+        <g fill="none" stroke="#C9A040" stroke-linecap="round" stroke-linejoin="round">
+          <animateTransform attributeName="transform" type="rotate"
+            from="0" to="360" dur="90s" repeatCount="indefinite"/>
+
+          <!-- ── OUTER ARC SEGMENTS (rough circle boundary) ── -->
+          <path class="branch b1" stroke-width="1.9"
+            d="M -22,-64 C -8,-54 14,-67 27,-54 C 40,-41 22,-31 36,-17"/>
+          <path class="branch b2" stroke-width="1.7"
+            d="M 27,-54 C 44,-69 65,-51 62,-32 C 59,-14 43,-19 50,-2"/>
+          <path class="branch b3" stroke-width="1.8"
+            d="M 62,-32 C 79,-20 79,8 68,20 C 57,32 43,26 50,44"/>
+          <path class="branch b4" stroke-width="1.9"
+            d="M 50,44 C 60,62 47,74 29,69 C 11,64 10,48 -6,58"/>
+          <path class="branch b5" stroke-width="1.7"
+            d="M -6,58 C -19,76 -42,73 -52,57 C -62,41 -46,26 -53,-1"/>
+          <path class="branch b6" stroke-width="1.8"
+            d="M -53,-1 C -66,-17 -63,-41 -49,-53 C -35,-65 -22,-55 -22,-64"/>
+
+          <!-- ── INNER SPOKES (toward center) ── -->
+          <path class="branch b7"  stroke-width="1.1"
+            d="M -22,-64 C -11,-47 -5,-27 0,0"/>
+          <path class="branch b8"  stroke-width="1.1"
+            d="M 27,-54 C 17,-37 8,-17 0,0"/>
+          <path class="branch b9"  stroke-width="1.1"
+            d="M 62,-32 C 43,-22 22,-11 0,0"/>
+          <path class="branch b10" stroke-width="1.1"
+            d="M 50,44 C 33,29 18,15 0,0"/>
+          <path class="branch b11" stroke-width="1.1"
+            d="M -6,58 C -3,37 -1,18 0,0"/>
+          <path class="branch b12" stroke-width="1.1"
+            d="M -53,-1 C -35,-2 -17,0 0,0"/>
+
+          <!-- ── SMALL TWIG OFFSHOOTS ── -->
+          <path class="branch b13" stroke-width="0.9"
+            d="M -22,-64 C -29,-58 -34,-63 -30,-56"/>
+          <path class="branch b14" stroke-width="0.9"
+            d="M 36,-17 C 43,-11 49,-16 46,-9"/>
+          <path class="branch b15" stroke-width="0.9"
+            d="M 50,44 C 58,48 61,41 55,37"/>
+          <path class="branch b16" stroke-width="0.9"
+            d="M -6,58 C -13,65 -9,71 -4,67"/>
+          <path class="branch b17" stroke-width="0.9"
+            d="M -53,-1 C -61,3 -63,-5 -57,-8"/>
+
+          <!-- ── CENTRAL NODE ── -->
+          <circle class="center-dot" cx="0" cy="0" r="3.8"
+                  fill="#C9A040" stroke="none"/>
+        </g>
+      </g>
+
+      <!-- Logo text — static (not rotating) -->
+      <text class="logo-text-main"
+            x="90" y="178"
+            text-anchor="middle"
+            font-family="'DM Sans', sans-serif"
+            font-size="11.5"
+            letter-spacing="3.8"
+            fill="#D4A83A"
+            font-weight="500">MONTE DO LAMEIRÃO</text>
+      <text class="logo-text-sub"
+            x="90" y="197"
+            text-anchor="middle"
+            font-family="'Cormorant Garamond', serif"
+            font-size="13"
+            fill="#C9A040"
+            font-style="italic">turismo sustentável</text>
+    </svg>
+  </div>
+  <p class="hero-tag">Proposta de Produção Audiovisual · 4Improvements</p>
+  <h1 class="hero-title">
+    Onde o Tempo<br><em>Respira.</em>
+  </h1>
+  <p class="hero-sub">
+    Vídeo Promocional · Alandroal, Alentejo · Dark Sky Alqueva<br>
+    Hotel Rural 4★ · 30 Casas Eco · Slowdown Hospitality
+  </p>
+  <span class="hero-scroll">Proposta completa</span>
+</div>
+
+<!-- PROMOTOR -->
+<section class="promotor">
+  <p class="section-label">Promotor do Projeto</p>
+  <h2 class="section-title" style="color:#FDFCF8;">Quem está por detrás desta visão.</h2>
+  <div class="promotor-card">
+    <div>
+      <p class="promotor-block-label">Empresa Promotora</p>
+      <p class="promotor-name">AZERC –<br>Projetos Turísticos, Lda</p>
+      <p class="promotor-sub">Constituída em 2023, com o propósito de desenvolver um projeto de Eco Resort junto à albufeira do Alqueva.</p>
+    </div>
+    <div>
+      <p class="promotor-block-label">Sócios</p>
+      <ul class="socios-list">
+        <li>Alberto Luis Laplaine Fernandes Guimarães</li>
+        <li>Carlos Miguel Gomes Fernandes Fontão de Carvalho</li>
+        <li>José Barreto Carrilho Ramos</li>
+        <li>Rui Jorge Correia do Carmo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TERRENO E LOCALIZAÇÃO -->
+<section class="brief">
+  <p class="section-label">Terreno e Localização</p>
+  <h2 class="section-title">Uma herdade no coração do Alentejo Central, com tudo aprovado.</h2>
+  <p class="section-body">
+    29 hectares na Freguesia de Santiago Maior, Concelho de Alandroal, com uma ruína de 450 m² de construção e dois projetos municipalmente aprovados. Localização privilegiada junto à Reserva Dark Sky do Alqueva — o primeiro destino de Astroturismo certificado do mundo.
+  </p>
+  <div class="brief-grid">
+    <div class="brief-cell">
+      <p class="brief-cell-label">Localização</p>
+      <p class="brief-cell-value">Santiago Maior<br>Alandroal, Évora</p>
+      <p class="brief-cell-note">Alentejo Central · Fronteira com Espanha via Guadiana</p>
+    </div>
+    <div class="brief-cell">
+      <p class="brief-cell-label">Área total</p>
+      <p class="brief-cell-value">29,045 ha</p>
+      <p class="brief-cell-note">Ruína existente: ~450 m² de construção em xisto</p>
+    </div>
+    <div class="brief-cell">
+      <p class="brief-cell-label">Projeto aprovado</p>
+      <p class="brief-cell-value">Hotel Rural 4★<br>+ 30 Casas Eco</p>
+      <p class="brief-cell-note">10 quartos no Monte reabilitado · 30 casas de madeira sustentáveis</p>
+    </div>
+    <div class="brief-cell">
+      <p class="brief-cell-label">Dark Sky Alqueva</p>
+      <p class="brief-cell-value">1.º Destino<br>Starlight do Mundo</p>
+      <p class="brief-cell-note">Astroturismo · Céu noturno mais límpido da Europa</p>
+    </div>
+  </div>
+
+  <!-- Distances table -->
+  <table class="dist-table" style="margin-top: 40px;">
+    <thead>
+      <tr>
+        <th>Destino</th>
+        <th>Distância</th>
+        <th>Tempo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dest highlight">Lisboa</td>
+        <td class="highlight">190 km</td>
+        <td class="highlight">1h 45 min</td>
+      </tr>
+      <tr>
+        <td class="dest">Vila Viçosa</td>
+        <td>38 km</td>
+        <td>40 min</td>
+      </tr>
+      <tr>
+        <td class="dest">Monsaraz</td>
+        <td>16 km</td>
+        <td>15 min</td>
+      </tr>
+      <tr>
+        <td class="dest">Praia Azenha d'El Rei</td>
+        <td>11 km</td>
+        <td>15 min</td>
+      </tr>
+      <tr>
+        <td class="dest">Reguengos de Monsaraz</td>
+        <td>24 km</td>
+        <td>24 min</td>
+      </tr>
+      <tr>
+        <td class="dest">Vilanueva del Fresno (Espanha)</td>
+        <td>40 km</td>
+        <td>35 min</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- CONCEITO CRIATIVO -->
+<section>
+  <p class="section-label">Conceito Criativo do Vídeo</p>
+  <h2 class="section-title">O silêncio como linguagem.<br>A terra como argumento.</h2>
+
+  <blockquote class="concept-quote">
+    "Há lugares que o mundo ainda não pressa.<br>O Monte do Lameirão é um deles."
+  </blockquote>
+
+  <p class="section-body">
+    O vídeo não vende — <em>evoca</em>. Não descreve — <em>sugere</em>. Sem pessoas em câmara, sem locutor a falar sobre preços ou metros quadrados. A voice-off entra suave, em inglês e/ou português, e conduz o espectador numa experiência sensorial que o transporta para o Monte antes de sequer ter chegado lá.
+  </p>
+  <p class="section-body" style="margin-top: 16px;">
+    O conceito de <strong>"slowdown hospitality"</strong> é o fio condutor narrativo. Num mundo de velocidade e ruído, o Monte do Lameirão oferece o oposto — e o vídeo demonstra isso antes de o dizer. Os planos respiram. Os cortes são lentos. O som é a terra.
+  </p>
+
+  <div class="acts">
+    <div class="act">
+      <p class="act-num">Ato I · Descoberta</p>
+      <h3 class="act-title">O Monte desperta</h3>
+      <p class="act-body">Drone ao amanhecer. O sol rompe sobre os 29 hectares. As paredes de xisto da ruína emergem na luz dourada. Os primeiros 35 segundos sem voz — apenas o vento alentejano e os pássaros. O espectador chega antes de ser convidado.</p>
+      <p class="act-time">0:00 — 0:40</p>
+    </div>
+    <div class="act">
+      <p class="act-num">Ato II · Visão</p>
+      <h3 class="act-title">O que vai ser</h3>
+      <p class="act-body">Integração dos renders 3D do monte reabilitado e das casas eco de madeira na paisagem real. A voice-off constrói a narrativa: hotel de 10 quartos, 30 casas sustentáveis, piscina biológica, horta, padel. O futuro sobrepõe-se ao presente.</p>
+      <p class="act-time">0:40 — 1:50</p>
+    </div>
+    <div class="act">
+      <p class="act-num">Ato III · Convite</p>
+      <h3 class="act-title">O céu pertence-lhe</h3>
+      <p class="act-body">Jantar vínico ao ar livre ao pôr-do-sol. Fade para a noite — o céu estrelado de Alqueva, o 1.º destino Starlight certificado do mundo. A voz encerra. Surge o logo do Monte do Lameirão: <em>"O Sonho Começa Aqui."</em></p>
+      <p class="act-time">1:50 — 2:30</p>
+    </div>
+  </div>
+</section>
+
+<!-- ÂMBITO DO PROJETO -->
+<section>
+  <p class="section-label">Âmbito do Projeto</p>
+  <h2 class="section-title">De ponta a ponta, sem que o cliente tenha de se preocupar com nada.</h2>
+
+  <div class="nota-renders">
+    <p class="nota-renders-title">✦ Nota de Valor Acrescentado</p>
+    <p class="nota-renders-body">O Monte do Lameirão já dispõe de renders 3D do hotel e das casas eco, bem como de imagens reais do terreno e do monte. Estes ativos serão integrados no vídeo, enriquecendo a narrativa visual e reduzindo a necessidade de dias adicionais de filmagem para mostrar o projeto futuro — uma vantagem significativa em termos de custo e tempo de produção.</p>
+  </div>
+
+  <div class="scope-phases">
+    <div class="phase">
+      <div class="phase-label-col">
+        <p class="phase-num">Fase 01</p>
+        <p class="phase-name">Pré-Produção</p>
+      </div>
+      <div class="phase-content-col">
+        <ul class="scope-items">
+          <li>Desenvolvimento do conceito criativo e tratamento narrativo</li>
+          <li>Escrita do guião de voice-off (versão PT e/ou EN)</li>
+          <li>Storyboard visual + integração dos renders 3D existentes</li>
+          <li>Planeamento da deslocação e logística de filmagem</li>
+          <li>Seleção de música ambiente e referências de tom editorial</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-label-col">
+        <p class="phase-num">Fase 02</p>
+        <p class="phase-name">Produção<br>(Filmagens)</p>
+      </div>
+      <div class="phase-content-col">
+        <ul class="scope-items">
+          <li>1 dia completo de filmagens no Monte do Lameirão (Santiago Maior)</li>
+          <li>Captação com câmara principal — paredes de xisto, paisagem, detalhes</li>
+          <li>Captação aérea com drone certificado ANAC</li>
+          <li>Planos ao amanhecer + luz dourada + pôr-do-sol + noturno (céu estrelado Alqueva)</li>
+          <li>Deslocação de equipa desde Lisboa (~190 km) + alojamento 1 noite</li>
+          <li>Direção artística no local</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-label-col">
+        <p class="phase-num">Fase 03</p>
+        <p class="phase-name">Pós-Produção</p>
+      </div>
+      <div class="phase-content-col">
+        <ul class="scope-items">
+          <li>Montagem e edição do vídeo principal (2 a 2:30 min)</li>
+          <li>Integração e composição dos renders 3D com imagens reais</li>
+          <li>Correção de cor — color grading cinematográfico (tom dourado alentejano)</li>
+          <li>Sound design + seleção e licenciamento de música (royalty-free)</li>
+          <li>Gravação de voice-off profissional em estúdio</li>
+          <li>Mistura e masterização de áudio final</li>
+          <li>Pack de cortes para redes sociais (60 seg, 16:9 e 9:16)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-label-col">
+        <p class="phase-num">Fase 04</p>
+        <p class="phase-name">Entrega<br>&amp; Revisões</p>
+      </div>
+      <div class="phase-content-col">
+        <ul class="scope-items">
+          <li>Entrega do primeiro corte para aprovação do cliente</li>
+          <li><strong>Três rondas de revisão incluídas</strong> após a entrega</li>
+          <li>Ficheiro master em alta resolução (4K ou Full HD consoante pacote)</li>
+          <li>Versões otimizadas para web, email e redes sociais</li>
+          <li>Versão em PT e/ou EN consoante o pacote escolhido</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIMENTO -->
+<section class="pricing">
+  <p class="section-label">Investimento</p>
+  <h2 class="section-title" style="color:#FDFCF8;">Transparente. Justo. Sem surpresas.</h2>
+  <p class="section-body">
+    Dois pacotes para dois objetivos. O Standard cobre o essencial com qualidade de referência. O Premium entrega um produto completo, bilingue e pronto para qualquer mercado — nacional ou internacional.
+  </p>
+
+  <div class="pkg-grid">
+    <!-- STANDARD -->
+    <div class="pkg">
+      <p class="pkg-name">Pacote Standard</p>
+      <p class="pkg-price"><span>€</span>3.200 <sub>+ IVA</sub></p>
+      <p class="pkg-desc">Vídeo promocional completo em 1 idioma, pronto para apresentação a investidores, listagens imobiliárias e redes sociais.</p>
+      <ul class="pkg-features">
+        <li><span class="check">✓</span>Pré-produção completa (conceito + guião + storyboard)</li>
+        <li><span class="check">✓</span>1 dia de filmagens no Monte do Lameirão</li>
+        <li><span class="check">✓</span>Câmara principal + drone certificado ANAC</li>
+        <li><span class="check">✓</span>Integração dos renders 3D existentes</li>
+        <li><span class="check">✓</span>Deslocação de equipa (Lisboa → Alandroal) + alojamento</li>
+        <li><span class="check">✓</span>Pós-produção completa + color grading</li>
+        <li><span class="check">✓</span>Voice-off profissional em 1 idioma (PT ou EN)</li>
+        <li><span class="check">✓</span>Vídeo principal em Full HD (2 a 2:30 min)</li>
+        <li><span class="check">✓</span>1 cut para redes sociais (60 seg, 16:9)</li>
+        <li><span class="check">✓</span>3 rondas de revisão incluídas</li>
+      </ul>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="pkg featured">
+      <span class="pkg-badge">Recomendado</span>
+      <p class="pkg-name">Pacote Premium</p>
+      <p class="pkg-price"><span>€</span>4.500 <sub>+ IVA</sub></p>
+      <p class="pkg-desc">Versão bilingue completa em 4K, com pack total para redes sociais. Posicionamento premium para mercado nacional e internacional (britânicos, holandeses, escandinavos, mercado espanhol).</p>
+      <ul class="pkg-features">
+        <li><span class="check">✓</span>Tudo o que está incluído no Pacote Standard</li>
+        <li><span class="check">✓</span>Voice-off em <strong>ambos os idiomas</strong> — PT + EN</li>
+        <li><span class="check">✓</span>Entrega master em <strong>4K UHD</strong> (3840×2160)</li>
+        <li><span class="check">✓</span>Pack redes sociais completo: 16:9, 9:16 (Reels/Stories) e 1:1</li>
+        <li><span class="check">✓</span>Plano noturno dedicado — Astroturismo / Dark Sky Alqueva</li>
+        <li><span class="check">✓</span>Legendas em PT e EN incluídas</li>
+        <li><span class="check">✓</span>Relatório de recomendação de distribuição digital</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ITEMIZED BREAKDOWN -->
+  <div class="items-grid">
+    <p class="item-group-header">Pré-Produção</p>
+    <div class="item-row">
+      <div class="item-name">Conceito criativo + guião de voice-off + storyboard<div class="item-note">Inclui revisão e alinhamento com os materiais existentes do projeto</div></div>
+      <div class="item-price">€ 550</div>
+    </div>
+
+    <p class="item-group-header">Produção · Filmagens no Monte do Lameirão</p>
+    <div class="item-row">
+      <div class="item-name">Direção e captação de imagem (câmara principal)<div class="item-note">1 dia completo, desde o amanhecer ao pôr-do-sol, com planos noturnos</div></div>
+      <div class="item-price">€ 650</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Drone certificado ANAC + operador<div class="item-note">Captação aérea 4K — panorâmicas dos 29 ha, Monte, envolvente Alqueva</div></div>
+      <div class="item-price">€ 500</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Assistente de produção<div class="item-note">Apoio técnico e logístico no local</div></div>
+      <div class="item-price">€ 200</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Equipamento técnico<div class="item-note">Estabilizador, lentes de cinema, equipamento de áudio de campo</div></div>
+      <div class="item-price">€ 150</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Deslocação Lisboa → Alandroal (~190 km ida e volta)<div class="item-note">Combustível + portagens, 2 veículos</div></div>
+      <div class="item-price">€ 90</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Alojamento + refeições (equipa, 1 noite no local)<div class="item-note">Necessário para captação de planos ao amanhecer e noturnos (Dark Sky)</div></div>
+      <div class="item-price">€ 180</div>
+    </div>
+
+    <p class="item-group-header">Pós-Produção</p>
+    <div class="item-row">
+      <div class="item-name">Montagem e edição do vídeo principal<div class="item-note">Estrutura narrativa em 3 atos · integração de renders 3D com imagens reais</div></div>
+      <div class="item-price">€ 900</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Color grading cinematográfico<div class="item-note">Look alentejano: dourado, quente, vasto — coerente com a identidade visual do projeto</div></div>
+      <div class="item-price">€ 300</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Sound design + música (licença royalty-free)<div class="item-note">Trilha sonora para uso comercial sem restrições de canal ou duração</div></div>
+      <div class="item-price">€ 250</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Gravação de voice-off profissional (1 idioma)<div class="item-note">Locutor profissional em estúdio, PT ou EN, tom editorial e premium</div></div>
+      <div class="item-price">€ 320</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Mistura e masterização de áudio final<div class="item-note">Mix otimizado para web, projeção e redes sociais</div></div>
+      <div class="item-price">€ 150</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">Cut para redes sociais (60 seg, 16:9)<div class="item-note">Adaptação do vídeo principal para distribuição digital</div></div>
+      <div class="item-price">€ 160</div>
+    </div>
+    <div class="item-row">
+      <div class="item-name">3 rondas de revisão pós-entrega<div class="item-note">Corte, ritmo, áudio, grafismo e voice-off incluídos em cada ronda</div></div>
+      <div class="item-price">Incluído</div>
+    </div>
+
+    <div class="total-row">
+      <div>
+        <div class="total-label">Total · Pacote Standard</div>
+      </div>
+      <div>
+        <div class="total-value">€ 3.200 <span style="font-size:18px;color:rgba(253,252,248,0.3)">+ IVA</span></div>
+      </div>
+    </div>
+    <p class="total-note">Pacote Premium (bilingue PT+EN · 4K · pack social completo · noturno Dark Sky): € 4.500 + IVA</p>
+  </div>
+</section>
+
+<!-- CRONOGRAMA -->
+<section>
+  <p class="section-label">Cronograma</p>
+  <h2 class="section-title">Da aprovação à entrega, em 5 semanas.</h2>
+  <p class="section-body">
+    Após aprovação da proposta e pagamento do sinal, iniciamos imediatamente a pré-produção. O prazo pode comprimir para 4 semanas em caso de urgência.
+  </p>
+  <div class="timeline">
+    <div class="tl-item">
+      <p class="tl-week">Semana 1</p>
+      <div>
+        <p class="tl-phase">Pré-Produção</p>
+        <p class="tl-detail">Desenvolvimento do conceito final, escrita do guião, recolha dos renders 3D e materiais existentes do projeto, storyboard e planeamento logístico das filmagens.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-week">Semana 2</p>
+      <div>
+        <p class="tl-phase">Filmagens — Monte do Lameirão, Alandroal</p>
+        <p class="tl-detail">Deslocação da equipa desde Lisboa. 1 dia completo: captação do monte de xisto, paisagem dos 29 ha, casas, piscina e envolvente. Amanhecer, luz dourada, pôr-do-sol e planos noturnos do céu estrelado de Alqueva.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-week">Semanas 3–4</p>
+      <div>
+        <p class="tl-phase">Pós-Produção</p>
+        <p class="tl-detail">Montagem e edição, integração de renders 3D, color grading, sound design, gravação de voice-off em estúdio e mixagem de áudio. Construção do corte final.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-week">Semana 4</p>
+      <div>
+        <p class="tl-phase">Entrega do 1.º Corte para Aprovação</p>
+        <p class="tl-detail">Partilha do vídeo com a AZERC / Monte do Lameirão para revisão. O cliente dispõe de 5 dias úteis para enviar feedback da primeira ronda.</p>
+      </div>
+    </div>
+    <div class="tl-item">
+      <p class="tl-week">Semana 5</p>
+      <div>
+        <p class="tl-phase">Revisões &amp; Entrega Final</p>
+        <p class="tl-detail">Aplicação do feedback das até 3 rondas de revisão e entrega dos ficheiros finais em todos os formatos acordados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TERMOS -->
+<section class="terms">
+  <p class="section-label">Condições</p>
+  <h2 class="section-title">Simples e direto.</h2>
+  <div class="terms-grid">
+    <div class="term-card">
+      <p class="term-title">Condições de Pagamento</p>
+      <p class="term-body">
+        <strong>50% no início</strong> — sinal aquando da aprovação da proposta, para arranque imediato da pré-produção.<br><br>
+        <strong>50% na entrega</strong> — saldo na entrega do primeiro corte, antes das revisões finais.<br><br>
+        Pagamento por transferência bancária. Fatura emitida em cada fase.
+      </p>
+    </div>
+    <div class="term-card">
+      <p class="term-title">Revisões Incluídas</p>
+      <p class="term-body">
+        Estão incluídas <strong>3 rondas de revisão</strong> após a entrega do primeiro corte. Cada ronda abrange ajustes de corte, ritmo, integração de renders, áudio, grafismo e voice-off.<br><br>
+        Revisões adicionais: €150 por ronda.
+      </p>
+    </div>
+    <div class="term-card">
+      <p class="term-title">Direitos de Utilização</p>
+      <p class="term-body">
+        Todos os direitos de utilização comercial do vídeo final são transferidos para a AZERC – Projetos Turísticos, Lda após liquidação integral. A 4Improvements reserva o direito de utilizar o vídeo em portefólio e ações de comunicação própria.
+      </p>
+    </div>
+    <div class="term-card">
+      <p class="term-title">Validade da Proposta</p>
+      <p class="term-body">
+        Esta proposta é válida por <strong>30 dias</strong> a contar da data de emissão. Valores em euros, acrescidos de IVA à taxa legal em vigor (23%).<br><br>
+        Dias adicionais de filmagem ou deslocações extra cotados separadamente se necessário.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-claim">
+    "O Alentejo não se descreve.<br>Filma-se.<br>
+    <span style="font-size:18px;opacity:0.5">— E o sonho começa aqui.</span>"
+  </p>
+  <div class="footer-meta">
+    <p class="footer-agency">4Improvements</p>
+    <p class="footer-contact">
+      Lisboa, Portugal<br>
+      4improvementsportugal@gmail.com<br>
+      REF-2026-MDL-001 · Junho 2026<br><br>
+      Para: AZERC – Projetos Turísticos, Lda<br>
+      Monte do Lameirão · Santiago Maior, Alandroal
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
